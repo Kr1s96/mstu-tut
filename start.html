@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MSTU by Krzysztof - Documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-orange">
+    <div class="page-wrapper" >
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight text-bold">MSTU</span><span class="text-white"> by Krzysztof</span>
+                        </a>
+                    </h1>
+                    
+                </div><!--//branding-->
+
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i>MSTU Tutorial</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: May 24th, 2020</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="installation" class="doc-section">
+                                <h2 class="section-title">Installation</h2>
+                                <div id="step1"  class="section-block">
+                                    <h3 class="block-title">Step One</h3>
+                                    <p>Download tool and copy it to your resources folder (...\MTA\server\mods\deathmatch\resources) or upload on your ftp server.
+                                    </p>
+                                    <a href="http://www.mediafire.com/file/40nfl6xjqi2nwvc/mstu.zip/file" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download Tool</a>
+                                </div><!--//section-block-->
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">Step Two</h3>
+                                    <p>Open MTA and join your server. Open map editor and make sure you have admin rights. To start the tool type:</p>
+                                        <pre><code class="language-css">/start mstu</code></pre>
+                                        <p>If tool wasn't loaded you have to refresh all resources with command /refreshall. When you start it successfully type CTRL+B to open HUD.</p> 
+                                </div><!--//section-block-->
+                                <div id="step3"  class="section-block">
+                                    <h3 class="block-title">Step Three (on first launch)</h3>
+                                    <p>Tool requires few additional files and rights therefore it will ask you to add them. Press 'Yes, restart' but remember that this action will restart your map editor so don't forget about saving your map. When you press 'Yes, restart' this request should not appear anymore.
+                                    </p>
+                                    <div class="text-center" >
+                                        <img src="https://i.imgur.com/D8UjvI1.png"/>
+                                    </div>
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            
+                            <section id="video-tutorial" class="doc-section">
+                                <h2 class="section-title">Video tutorial</h2>
+                                    <div class="section-block">
+                                    <div class="embed-responsive embed-responsive-16by9"> 
+                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QBTPbJoLwf0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div><!--//section-block-->
+                                <div id="html" class="section-block">
+                                    
+                                <div class="callout-block callout-info">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Video information</h4>
+                                        <p>Video tutorial shows all tool features and examples of their usage. Each feature is split into a section so it is easier to navigate. Keep in mind that video was created for version 1.0 of the tool so future updates will not be included here.</p>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+                                
+                                <div class="callout-block callout-success">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Useful Tip:</h4>
+                                        <p>In case you do not understand a feature shown in the video, it is advised to read carefully text version of this documentation.</p>
+                                    </div><!--//content-->
+                                </div>
+                            
+                                <section id="controls" class="doc-section">
+                                    <h2 class="section-title">Controls</h2>
+                                    <div class="section-block">
+    
+                                        <div class="section-block">
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <!-- 16:9 aspect ratio -->
+                                                    <p><i>Main controls:</i></p>
+                                                        <p><b>Ctrl + B</b> – open / hide tool</p>
+                                                        <p><b>G</b> – start selecting / create group</p>
+                                                        <p><b>X</b> – cancel / destroy group</p>
+                                                        <p><b>C</b> – clone group</p>
+                                                        <p><b>Delete</b> – delete group</p>
+                                                        <p><b>F3</b> – open group properties</p>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                        <p><i>Controls which you can’t see in settings:</i></p>
+                                                        <p><b>Shift + key</b> - speed up following actions:</p>
+                                                        <ul>
+                                                        <li>faster group movement</li>
+                                                        <li>faster changing values when you use arrows near editboxes</li>
+                                                        <li>faster zooming in element preview</li>
+                                                        </ul>
+                                                        <p><b>Shift + key</b> – look up  but everything is slower</p>
+                                                        <p><b>Ctrl + X</b> – destroy group without changing element IDs</p>
+                                                        <p><b>CTRL + LMB</b> – Unselect only 1 element in wand selection mode, also detect loop objects when nearby elements option is enabled (explained in tutorial)</p>
+                                                        <p><b>CTRL + A</b> – select all elements, before you do it press G to start selecting</p>
+                                                </div>
+                                            </div><!--//row-->
+                                        </div><!--//section-block-->
+                                    </div>
+                                </div><!--//content-->
+                            </div><!--//callout-block-->
+
+                            <section id="full-tutorial" class="doc-section">
+                                <h2 class="section-title">Full tutorial</h2>
+                                <div class="section-block">
+
+                                    <div class="section-block" id="basics">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/ILUyDCy.jpg"/>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <h4>Basics</h4>
+                                                <p>To open HUD press <span style="font-weight:bold">CTRL+B</span>. HUD is active only when cursor is showing (it will hide in crosshair mode). The main feature of the tool is creating groups and transforming them. To create one press <span style="font-weight:bold">G</span> to start selecting and select few elements – it doesn’t have to be an object, tool supports all popular element types including race. To unselect press the same element again (you can find more detailed info about selecting in next paragraph). If done, press <span style="font-weight:bold">G</span> again to approve selection – all red elements should become green. Another way of selecting – hold <span style="font-weight:bold">G</span>, select few elements and release the button. After that group will be created automatically (it is good and faster when you want to select only few elements). Now you can freely move and rotate the group as an one big element. Controls are the same like in map editor – <span style="font-weight:bold">CTRL + arrow</span> to rate, arrow to move, <span style="font-weight:bold">SHIFT</span> to make it faster, <span style="font-weight:bold">CTRL</span> to make it slowly. If you want to clone the group press <span style="font-weight:bold">C</span> or press a clone icon (in shape of 2 rectangles). Similarly you can destroy it by pressing <span style="font-weight:bold">X</span> or an icon on the left side of the clone icon. This action changes all IDs of group elements. To keep old IDs press <span style="font-weight:bold">CTRL+X</span> or disable changing IDs in settings. New IDs are helpful mostly in detecting old groups. You can undo or redo actions by pressing a proper arrow icon.
+                                                </p>
+                                            </div>
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </div>
+
+
+                                <div class="callout-block callout-warning">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Attention</h4>
+                                        <p>You can undo only following actions:</p>
+                                        <ul>
+                                            <li>select / unselect element</li>
+                                            <li>delete / destroy / create / clone group</li>
+                                            <li>change position / rotation</li>
+                                            <li>set property</li>
+                                            <li>duplicate</li>
+                                            <li>create group from library</li>
+                                            <li>create cover group (not setting)</li>
+                                            <li>duplicate</li>
+                                        </ul>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+
+                                <div class="section-block" id="selecting">
+
+                                    <div class="section-block">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <h4>Selecting</h6>
+                                                <p>There are 4 types of selecting – you can switch between them by pressing one of icons in selection options (second row in main HUD). Changing selection type while selecting won’t cancel selection. If you don’t know how to start selecting read basics first. Before I introduce them it is a good moment to mention about selecting large groups. You can select elements as many as you want but it is obvious that if you create large groups (you are able to select even whole maps) it will cause lags. You can deal with them or use a feature which hides most of elements in the group and reduce lags. It is worth a try. How it works? Select many elements and you will receive a notification “You selected many elements and its editing may cause lags. Do you want to create this group anyway?” – select 3rd option: “Yes, but show only few elements while editing”. You will be asked to select few elements you want to see. Try to avoid many rotation transformations (rotating around different axes many times) otherwise final calculations will take much time. Keep in mind that changing pivot position, covering, cloning and duplicate options don't work in this case. If you selected elements and didn’t receive the notification change “Minimum elements for large group” option in settings and set lower value. You should save map before creating large groups.
+                                                </p>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/u9QNoUu.jpg"/>
+                                            </div>
+                                        </div><!--//row-->
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <h6>Created group becomes green:<h6><br>
+                                                <img src="https://i.imgur.com/9qkXLa3.jpg" class="img-fluid" alt="Responsive image"/>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <h6>Notification about creating large group (after selecting large amount of elements):<h6>
+                                                <img src="https://i.imgur.com/42LcHPs.jpg" class="img-fluid" alt="Responsive image"/>
+                                            </div>
+                                        </div><!--//row-->
+
+                                    </div><!--//section-block-->
+                                </div>
+
+                                <div class="section-block">
+
+                                    <div class="section-block">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/MuzJgaA.jpg" class="img-fluid" alt="Responsive image"/>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <h4>Wand</h4>
+                                                <p>Wand is really useful and the most complicated feature in comparison to other selection types. Actually there are 3 selection options in 1. First of all it detects old groups and elements created by the tool, just press <b>G</b> and select 1 one of these elements to select a whole group. Another option is selecting nearby elements with the same type or model. By default it selects all objects outlying 50 meters from the object you selected. You can change the distance in wand options. Third wand feature is loop detection - it detects loops and duplications. All you have to do is select first 2-3 objects and wand will select the rest. When you select for example every 3rd object of the loop wand will proceed the same way. Keep in mind that if all 3 selection option are enabled wand will select all nearby elements. To avoid it you have to press <b>CTRL</b> while selecting or just disable nearby elements detector in wand options. Watch tutorial in case you have doubts how it works. You know how to fast select many elements but how to unselect them? You can use either undo option or press <b>SHIFT</b> and click on selected element – it will work analogous to selecting. If you want to unselect only 1 element press <b>CTRL + SHIFT</b> and click on selected element.
+                                                </p> 
+                                            </div>
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+
+                                </div>
+
+                                <div class="section-block">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <h4>2D selector</h4>
+                                            <p>It creates 2D rectangle (press Left Mouse Button, move cursor and release LMB) and selects all elements within the created area. Keep it mind that it may select elements you don’t see because they are hidden by other elements. So make sure there are no other elements behind which you don’t want to select. Another thing you should know but also should be obvious – it selects only elements which are streamed in so you won’t select elements which are far away, out of sight. To unselect elements press SHIFT before you release LMB.</p>  
+                                            </p>
+                                        </div>
+
+                                        <div class="col-md-6 col-12">
+                                            <!-- 16:9 aspect ratio -->
+                                            <img src="https://i.imgur.com/7WrJpLm.png" class="img-fluid" alt="Responsive image"/>
+                                        </div>
+                                    </div><!--//row-->
+
+                                </div>
+
+                                <div class="section-block">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6 col-12">
+                                            <!-- 16:9 aspect ratio -->
+                                            <img src="https://i.imgur.com/I7I9X8Q.jpg" class="img-fluid" alt="Responsive image"/>
+                                        </div>
+
+                                        <div class="col-md-6 col-12">
+                                            <h4>3D selector</h4>
+                                            <p>It creates 3D box (press <b>LMB</b>, move cursor and release LMB) and selects all elements within the created area. Obviously it is better to enable crosshair (hide cursor with F) to create the box wherever you want. You can freely edit box dimensions even whenever you want. There are dots in box corners. Actually they are buttons and when you press one of them you can move it to another position. This selector can be used only once, if you want to create many selection boxes you have to press <b>G</b> to create a group and press <b>G</b> again to start selecting and create another box. </p>  
+                                            </p> 
+                                        </div>
+
+                                    </div><!--//row-->
+
+                                </div>
+
+                                <div class="section-block" id="">
+
+                                    <div class="section-block">
+                                
+                                        <h4>Classic selector</h4>
+                                        <p>Default selector enables you to select elements 1 by 1. To unselect element just select that element again.     
+                                        </p>  
+                                        <div class="text-center" >
+                                            <img src="https://i.imgur.com/IqgR8Hk.png" width=10% height=10%/>
+                                        </div><br><br>
+                                        <h4>Select all</h4>
+                                        <p>There is an additional selector which selects all elements or all elements defined in filter. Press <b>G</b> to start selecting and then press <b>CTRL+A</b>.
+                                        </p>  
+
+                                    </div><!--//section-block-->
+                                </div>
+
+                                <div class="section-block" id="filters">
+
+                                    <div class="section-block">
+                                        <h4>Filters</h4>
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <p>Element filters work for 2D and 3D selectors. You can exclude / include object models or element types. If you want to use model filter type in editbox one or few models where comma is separator (for example 3458,8838). </p>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <img src="https://i.imgur.com/qWRWH8W.png">
+                                            </div>
+                                        </div><!--//row-->
+
+                                </div>
+
+                                <div class="section-block" id="pivot">
+                                    <div class="section-block">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/hEOeEb9.jpg"/>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <h4>Pivot</h4>
+                                                <p>Pivot is a middle point of a group (3 perpendicular lines). All group elements are being rotated around this point. It might be useful in some cases especially in cloning and duplicating (examples in video tutorial). You can change pivot position using editboxes or arrows near editboxes (when you press <b>CTRL</b> and press an arrow it will deacrease value jump and <b>SHIFT</b>  gives the opposite effect). ‘Get’ button allows you to get position of any element, so when you press the button and then select an element, pivot position will be the same as position of the element. ‘Reset’ changes pivot position to default values. You can switch between absolute and relative position (absolute position in the middle point is 0,0,0 and relative position gets real GTA position), it is useful when you change values manually. </p>
+                                                </p>
+                                            </div>
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </div>
+
+                                <div class="section-block" id="duplicate">
+                                    <div class="section-block">
+
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <h4>Duplicate</h6>
+                                                <p>Duplicate feature is similar to duplicate in AMT or Netools – it duplicates 2 groups X times. How to duplicate? Select few elements (optionally create a group) and press ‘Get’ button. Do the same with another group and press the second ‘Get’ button. Define number of duplications and press GO. If you select Between option tool will generate duplications between these 2 groups. Pivot position is very important because pivots of 2 groups determinate direction of duplication (video explains it well).
+                                                </p>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/wU2GTEc.jpg"/>
+                                            </div>
+                                        </div><!--//row-->
+
+                                    </div>
+                                </div>
+
+                                <div class="callout-block callout-warning">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Attention</h4>
+                                        <p>You should be aware of slow drawing distance when you use this feature.</p>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+
+                                <div class="section-block" id="library">
+                                    <div class="section-block">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <h4>Library</h6>
+                                                <p>To open library press the book icon. Library allows you to store various groups and load them whenever you want. To add a group to library press save icon (blue floppy disk), then define its name and choose category. You can sort your groups in browser by element count or by name, just press a proper header on the top of the browser. When your library becomes big it may be easier to search groups. Type part of group name and press search (magnifying glass icon). You can search not only by name but also by category and map name (map name only if groups are imported from a map). You are able to import all MSTU groups from a map – just press ‘Import from map’, select the map you want and define name and category. To load a group select it in browser and press green folder icon.  If you want to see preview of library groups press grey eye icon. Move around with camera using <b>LMB</b>. Use mouse scroll to zoom in / out (<b>LCTRL</b> – slower zooming, <b>SHIFT</b> – faster zooming). To remove group from library select it in browser and press red bin icon. And to remove imported groups from a map press ‘Remove from map’. You can also remove all your groups by pressing ‘Clear local library’. You can switch between Global and Local – first option shows all groups and local shows group created by you.
+                                                    </p>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/0HefYPe.png"/>
+                                            </div>
+                                        </div><!--//row-->
+
+                                    </div>
+
+                                </div>
+
+                                <div class="callout-block callout-warning">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Attention</h4>
+                                        <p>You can’t delete groups created by someone else (only manually in xml).</p>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+
+                                <div class="section-block" id="cover">
+                                    <div class="section-block">
+
+                                        <h4>Cover</h6>
+
+                                        <div class="text-center" >
+                                            <img src="https://i.imgur.com/dNDYqfX.jpg" class="img-fluid" alt="Responsive image"/>
+                                        </div>
+                                        <br>
+                                        <p>Cover is a powerful tool which enables you to cover elements very fast. Press brick icon to open its HUD. Press ‘Create new setting’. You will see preview of an object. You can change its model in editbox (Covered model). Preview works exactly like library preview. Move around with camera using <b>LMB</b>. Use mouse scroll to zoom in / out (<b>CTRL</b> – slower zooming, <b>SHIFT</b> – faster zooming). Additionally you can change weather or disable lines which help you recognize sides.
+                                        </p>
+                                        <p>As you can see there are 5 rows representing each side of the object. You can set model, position and rotation. When you define a valid model you should see this object in preview. Edit position and rotation using editboxes or arrows near editboxes (when you press <b>CTRL</b> and press an arrow it will deacrease value jump and SHIFT  gives the opposite effect). Attention: editing rotation sometimes might be problematic and when you change rotation for example from 89 degrees to 91, an object can rotate by 180 degrees – you have to either search alternative rotation or use values such as 90.0001). If you don’t want to use all sides leave model empty or disable it (switch this side to X). ‘C’ buttons clear rows (set values to default). You can change scale, collisions or make objects doublesided – it concerns only elements you create, not the main cover element! Press ‘Save’ if done. Now you use this setting in covering. Create a group which contains objects with model you used while designing cover setting. Important:  in case you select various elements, cover tool detects dominating model to be covered. If you did everything correctly you should see preview of your cover (if you don’t see try to hide cover HUD and open again, optionally restart tool or create the setting again). If you change position or roation of the group preview of the cover won’t change so you have to press yellow button ‘Update’ before you appove it. You can disable sides of the setting or if you made many settings for 1 model you can use arrows to search other model for covering. You can also type it manually if you know what model you want to use. If you want to use the same model for all sides you can type it on the top and press 'Set' to apply it to all editboxes.
+                                        </p>
+                                        <div class="text-center" >
+                                            <img src="https://i.imgur.com/dFiYJ5D.png" class="img-fluid" alt="Responsive image"/>
+                                        </div>
+                                        <br>
+                                        <p>When you press ‘Change settings’ button you will see a window where you can either remove a setting or edit default setting. What is default cover moidel? So as I mentioned you can have many settings for 1 model. Each time you create new setting all models of the setting will be set as default (after creating a group you will see preview of this setting).
+                                        </p>
+                                        <div class="text-center" >
+                                            <img src="https://i.imgur.com/s0Hhelu.png" class="img-fluid" alt="Responsive image"/>
+                                        </div>
+                                        <br>
+                                        <p>I said you can change scale, collisions and make objects doublesided but what if I want to apply it only to few objects of the cover setting? Well, you have to create 2 different settings, if you want to combine them type in editboxes proper models or change default settings.
+                                        </p>
+                                        <p>With this feature you can cover objects very fast but also create any compositions and apply them to loops, roads and wherever you want. Watch video tutorial to see examples.
+                                        </p>  
+
+
+                                    </div>
+                                </div>
+
+                                <div class="callout-block callout-info">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Cover settings information</h4>
+                                        <p>Cover default settings and overall tool settings are stored in following location -  MTA/server/mods/deathmatch/databases/global/mstu_database.db so if you don’t want to lose them after reinstalling MTA, make a backup.
+                                        </p>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+
+                                <div class="callout-block callout-info">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Share your libraries</h4>
+                                        <p>Library and cover compositions are stored in tool’s folder in xml files. You can edit them manually and for example add someone’s library. I encourage you to make such libraries and share them with others by sending library.xml or cover.xml files. In case you don’t know how to join 2 libraries let me know, but I think people without scripting knowledge are capable of doing it. 
+                                        </p>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+
+
+                                <div class="section-block" id="group">
+
+                                    <div class="section-block">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12">
+                                                <!-- 16:9 aspect ratio -->
+                                                <img src="https://i.imgur.com/DV1kT9x.png" class="img-fluid" alt="Responsive image"/>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <h4>Group properties</h4>
+                                                <p>To edit group properties select a group and press <b>F3</b> or press twice  on it. You can edit properties of all knows element types including race. In case your group has various element types tool will detect dominating element type. You can change model, color, type and any other property faster than ever.     
+                                                </p> 
+                                            </div>
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+
+                                </div>
+
+                                <div class="section-block" id="settings">
+
+                                    <div class="section-block">
+                                        <h4>Settings</h4>
+                                        <p>In settings you can change visual things like colors and also enable / disable pivot and bounding box.</p>
+                                        <p>‘Crossing’ is a useful thing in 2D and 3D selecting. If it is enabled selecting is more accurate – tool detects element edges, not only centre of an element. It requires more calculations so if you have bad PC and somehow it causes lags you can disable it, leave it enabled otherwise.</p>
+                                        <p>When you disable ‘Assign IDs for groups’ tool won’t change IDs of elements after destroying groups and it won’t remember old groups so it won’t be possible to detect them with Wand.</p>
+                                        <p>‘Maximum undo actions’ determinates how many times in a row you can undo action.</p>
+                                        <p>‘Minimum elements large group’ option as I mentioned determinates how many elements you have to select to see a notification about large group.</p>
+                                        <p>‘2D / 3D visual select refresh time’ options determinates how often selection should be updated, bigger values might be reasonable only for bad computers.</p>
+                                        <p>In controls section you can change buttons. Press on a button you want to change and then press a new key.</p>
+                                        <p>You can always go back to default settings. If you want to apply changes press ‘Save and close’ otherwise press ‘Cancel’.</p>
+
+                                    </div><!--//section-block-->
+
+                                    <div class="text-center" >
+                                        <img src="https://i.imgur.com/quGic0Z.jpg" class="img-fluid" alt="Responsive image"/>
+                                    </div>
+
+                                </div>
+
+                                <div class="section-block" id="help">
+
+                                    <div class="section-block">
+                                        <h4>Help</h4>
+                                        <!--//section-block-->
+                                        <p>Press question mark icon to watch tutorial through MTA. You can also find there useful links and notes.
+                                        </p>
+                                    
+                                    <div class="text-center" >
+                                        <img src="https://i.imgur.com/Xu8KTwv.png" class="img-fluid" alt="Responsive image"/>
+                                    </div>
+
+                                </div>
+                                
+
+                            </section><!--//doc-section-->
+
+                        
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                        
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link scrollto" href="#header">Home</a>
+                                <a class="nav-link scrollto" href="#installation">Installation</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#step1">Step One</a>
+                                    <a class="nav-link scrollto" href="#step2">Step Two</a>
+                                    <a class="nav-link scrollto" href="#step3">Step Three</a>
+                                </nav><!--//nav-->
+                                <a class="nav-link scrollto" href="#video-tutorial">Video Tutorial</a>
+                                <a class="nav-link scrollto" href="#controls">Controls</a>
+                                <a class="nav-link scrollto" href="#full-tutorial">Full Tutorial</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#basics">Basics</a>
+                                    <a class="nav-link scrollto" href="#selecting">Selecting</a>
+                                    <a class="nav-link scrollto" href="#filters">Filters</a>
+                                    <a class="nav-link scrollto" href="#pivot">Pivot</a>
+                                    <a class="nav-link scrollto" href="#duplicate">Duplicate</a>
+                                    <a class="nav-link scrollto" href="#library">Library</a>
+                                    <a class="nav-link scrollto" href="#cover">Cover</a>
+                                    <a class="nav-link scrollto" href="#group">Group properties</a>
+                                    <a class="nav-link scrollto" href="#settings">Settings</a>
+                                    <a class="nav-link scrollto" href="#help">Help</a>
+                                </nav><!--//nav-->
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div>
+    
+    <footer id="footer" class="footer text-center" style="height: auto !important;">
+        <div class="container">
+            <small class="copyright">Copyright by Krzysztof.<br>Created with <i class="fa fa-heart"></i> for FFS</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+
