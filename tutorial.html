@@ -491,40 +491,93 @@
 					     	<h4>Version 1.1</h4>
 						<!--//section-block-->
 						<div id="update1"  class="section-block">
-							<ul class="list1">
 							<li>Added GUI themes</li>
-								<li>Added Raytrace for 2D selection</li>
-								<p>Raytrace is a new option for 2D (rectangular) selection which selects elements only in your sight of view (skipping elements behind other elements). This option might be much more useful, just keep in mind this method uses 9 (or only 1 if crossing is disabled) characteristic points of each element and it doesn't work perfect in some cases. You can always toggle raytrace in settings (It's called "Raytrace for 2D selection", if it is selected it will be enabled as default) or using a key (which can be changed in settings as well, 'R' is default key), you can use the key no matter if this option is enabled or disabled.
-								</p>
-								<li>Added axes lock</li>
-								<p>This option allows you to move groups along XYZ axes. It works similar to editor axes lock but in this case you can toggle this option both in tool settings and using a key ('Q' is default key).
-								</p>
-								<li>Added ped different alpha when selected</li>
-								<li>Info about tool in chatbox is more clear, added command /mstu to open HUD, shared welcome_message.lua file where you can edit / remove this message.</li>
-								<li>Fixed marker alpha doesn't change after group destroy</li>
-								<li>Improved drawing bounding box for race pickups and spawnpoints</li>
-							</ul>
+							<li>Added Raytrace for 2D selection</li>
+							<div class="section-block">Raytrace is a new option for 2D (rectangular) selection which selects elements only in your sight of view (skipping elements behind other elements). This option might be much more useful, just keep in mind this method uses 9 (or only 1 if crossing is disabled) characteristic points of each element and it doesn't work perfect in some cases. You can always toggle raytrace in settings (It's called "Raytrace for 2D selection", if it is selected it will be enabled as default) or using a key (which can be changed in settings as well, 'R' is default key), you can use the key no matter if this option is enabled or disabled.
+							</div>
+							<li>Added axes lock</li>
+							<div class="section-block">This option allows you to move groups along XYZ axes. It works similar to editor axes lock but in this case you can toggle this option both in tool settings and using a key ('Q' is default key).
+							</div>
+							<li>Added ped different alpha when selected</li>
+							<li>Info about tool in chatbox is more clear, added command /mstu to open HUD, shared welcome_message.lua file where you can edit / remove this message.</li>
+							<li>Fixed marker alpha doesn't change after group destroy</li>
+							<li>Improved drawing bounding box for race pickups and spawnpoints</li>
 						</div>
 					</div>
 						
-					<h4>Version 1.2</h4>
-	
-					<p>
-						<li>Added mirror tool. It allows to mirror groups or single elements around X, Y or Z axis. It has few options:</li>
-						<li>Added Raytrace for 2D selection</li>
-						Raytrace is a new option for 2D (rectangular) selection which selects elements only in your sight of view (skipping elements behind other elements). This option might be much more useful, just keep in mind this method uses 9 (or only 1 if crossing is disabled) characteristic points of each element and it doesn't work perfect in some cases. You can always toggle raytrace in settings (It's called "Raytrace for 2D selection", if it is selected it will be enabled as default) or using a key (which can be changed in settings as well, 'R' is default key), you can use the key no matter if this option is enabled or disabled.
-						
-						<li>Added axes lock</li>
-						This option allows you to move groups along XYZ axes. It works similar to editor axes lock but in this case you can toggle this option both in tool settings and using a key ('Q' is default key).
-						<li>Added ped different alpha when selected</li>
-						<li>Info about tool in chatbox is more clear, added command /mstu to open HUD, shared welcome_message.lua file where you can edit / remove this message.</li>
-						<li>Fixed marker alpha doesn't change after group destroy</li>
-						<li>Improved drawing bounding box for race pickups and spawnpoints</li>
-					</p>
+					<div id="update1"  class="section-block">
+					     	<h4>Version 1.2</h4>
+						<!--//section-block-->
+						<div id="update2"  class="section-block">
+
+							<li>Added mirror tool. It allows to mirror groups or single elements around X, Y or Z axis. It has few options:</li>
+							<ul>
+							<li>Changing distance between mirror and original elements</li>
+							<li>Ruler which checks distance between 2 surfaces. Might be useful in setting distance between original and mirror elements but also in mapping overall.</li>
+							<li>Reset position and show / hide green surface which determinates mirror's position</li>
+							<li>Auto update and update button to see preview of mirrored elements</li>
+							<li>Enable / disable adding collisions and mirror shader</li>
+							<li>Model filter where you can add exceptions for elements which should have collisions enabled (useful for symmetrical objects)</li>
+							</ul>
+
+							<div class="callout-block callout-warning">
+			                                    <div class="icon-holder">
+			                                        <i class="fas fa-exclamation-triangle"></i>
+			                                    </div><!--//icon-holder-->
+			                                    <div class="content">
+			                                        <h4 class="callout-title">Attention</h4>
+			                                        <ul>
+			                                            <li>All mirrored objects are double-sided and have disabled collisions by default (you can add exceptions and enable collisions for symmetrical objects, watch video for more info). It is because many objects are assymetrical and a special shader is needed.</li>
+			                                            <li>All mirrored objects have disabled alpha animation when they appear because their draw distance is about 5-10% worse than normal objects (due to MTA bug/limitation). More info in the video.</li>
+			                                            <li>Tool can mirror most of popular element types: object, vehicle, ped, marker, race pickup, race spawnpoint.</li>
+			                                            <li>Cloning mirrored elements is possible in both ways as a group or a single element.</li>
+			                                            <li>Duplicating mirrored elements is possible.</li>
+			                                        </ul>
+			                                    </div><!--//content-->
+			                                </div><!--//callout-block-->
+
+			                                <div class="callout-block callout-warning">
+			                                    <div class="icon-holder">
+			                                        <i class="fas fa-exclamation-triangle"></i>
+			                                    </div><!--//icon-holder-->
+			                                    <div class="content">
+			                                        <h4 class="callout-title">Attention</h4>
+			                                        <p>Mirrored objects with mirror effect (no collision, double-sided, with shader):</p>
+			                                        <ul>
+			                                            <li>Are not visible in a right form when the tool is not running (while normal playing tool isn't required of course)</li>
+			                                            <li>Will lose that effect if any property is edited in object properties (keep in mind that object property ≠ group property and also if you really want to edit property of a single object you can use 'Add mirror effect' button to recover mirror effect)</li>
+			                                            <li>Cannot be mirrored twice. Technically you can do it but it won't be mirrored properly as long as the object isn't symmetrical.</li>
+			                                            <li>Cannot be covered (just cover them before mirroring)</li>
+			                                            <li>Can be detected by wand selector as a separated group</li>
+			                                            <li>Cannot be loaded by tool's library with the mirror effect</li>
+			                                            <li>Script loader must support getElementByID function</li>
+			                                        </ul>
+			                                    </div><!--//content-->
+			                                </div><!--//callout-block-->
+
+							<li>Added duplicate 2.0:</li>
+							<ul>
+							<li>Added option of duplicating single elements, not only groups. You can also mix it and duplicate groups and single element alternately</li>
+							<li>Added 'Linear' option which blocks rotation change (duplicated elements have the same rotation as their parents)</li>
+							<li>Added elements preview</li>
+							<li>Improved duplicating with 'Between' option - now elements are created alternately (in version 1.0 only 1st selection was duplicated)</li>
+							<li>Duplicate tool is now hidden in sub-window with slightly changed GUI. Press duplicate image icon to use this tool</li>
+							</ul>
+							<li>Added option of covering single elements</li>
+							<li>Fixed cover preview sometimes shows wrong objects</li>
+							<li>Cover preview is now visible even while creating a group (red objects). Same goes to new mirror feature</li>
+							<li>Interface is more clear now</li>
+							<li>'Wand options' button is now hidden until you select Wand selection</li>
+							<li>Added info about image buttons in main interface (when they are selected)</li>
+							<li>Added setting which changes sensivity of rotation movement. It applies to normal movement (slow & fast movement don't change). It is primarily useful when you want to rotate by 45/90 degrees way faster (this way of rotation change is much better than in group properties).</li>
+							<li>Effect of changing object's doubleside property is now visible. But keep in mind that map editor always makes objects doublesided so after next map loading this effect will be visible only while testing. Same goes to collisions.</li>
+							<li>Overall improvements and bug fixes</li>
+						</div>
+					</div>
 						
 				    	<div class="section-block">
 					    <div class="embed-responsive embed-responsive-16by9"> 
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QBTPbJoLwf0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=_FWi27BDRuM" frameborder="0" allowfullscreen></iframe>
 					    </div>
 					</div>
 				</div>
